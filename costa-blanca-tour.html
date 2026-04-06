@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Costa Blanca Tour | Small-Group Tours from Alicante</title>
+    <meta
+      name="description"
+      content="Small-group tours around Alicante: Canelobre Caves, Busot, curated day trips, and an Alicante wine tour."
+    />
+    <style>
+      :root {
+        --bg: #f6efe6;
+        --bg-soft: #fff8f1;
+        --panel: rgba(255, 251, 247, 0.9);
+        --panel-soft: rgba(255, 255, 255, 0.78);
+        --text: #2f2117;
+        --muted: #705f52;
+        --line: rgba(87, 58, 33, 0.13);
+        --accent: #db7b2e;
+        --accent-soft: rgba(219, 123, 46, 0.12);
+        --shadow: 0 18px 40px rgba(121, 83, 47, 0.12);
+        --radius: 28px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 12% 8%, rgba(219, 123, 46, 0.1), transparent 22%),
+          radial-gradient(circle at 88% 12%, rgba(194, 114, 61, 0.1), transparent 24%),
+          linear-gradient(180deg, #faf4ec 0%, #f6efe6 45%, #f9f3eb 100%);
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        position: relative;
+        overflow-x: clip;
+      }
+
+      .grid-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(63, 42, 24, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(63, 42, 24, 0.03) 1px, transparent 1px);
+        background-size: 4px 4px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent 78%);
+      }
+
+      .container {
+        width: min(1160px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(18px);
+        background: rgba(250, 244, 236, 0.84);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 72px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .brand-copy strong {
+        display: block;
+        font-family: "Iowan Old Style", "Palatino Linotype", serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .brand-copy span {
+        display: block;
+        margin-top: 0.15rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(47, 33, 23, 0.58);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        color: rgba(47, 33, 23, 0.72);
+        font-size: 0.95rem;
+      }
+
+      .nav a:hover {
+        color: var(--text);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        min-height: 46px;
+        padding: 0 1.2rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-size: 0.96rem;
+        font-weight: 600;
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        background: var(--accent);
+        color: #1a110a;
+        box-shadow: 0 10px 28px rgba(239, 154, 75, 0.22);
+      }
+
+      .button-primary:hover {
+        background: #f2a760;
+      }
+
+      .button-secondary {
+        border-color: rgba(87, 58, 33, 0.16);
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--text);
+      }
+
+      .button-secondary:hover {
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .hero {
+        padding: 3.6rem 0 1.8rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 2.2rem;
+        align-items: start;
+        grid-template-columns: 1.02fr 0.98fr;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid rgba(219, 123, 46, 0.28);
+        background: var(--accent-soft);
+        color: #9e591e;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Iowan Old Style", "Palatino Linotype", serif;
+        font-weight: 600;
+      }
+
+      h1 {
+        margin-top: 1rem;
+        font-size: clamp(2.6rem, 6vw, 5rem);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+      }
+
+      .intro {
+        margin-top: 1.15rem;
+        max-width: 44rem;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.8;
+      }
+
+      .stats {
+        display: grid;
+        gap: 0.85rem;
+        margin-top: 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat {
+        padding: 1rem 1.05rem;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: var(--panel-soft);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 0.25rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.35rem;
+      }
+
+      .hero-note {
+        margin-top: 1rem;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .signal-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1rem;
+      }
+
+      .signal {
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid rgba(87, 58, 33, 0.12);
+        background: rgba(255, 255, 255, 0.72);
+        color: rgba(47, 33, 23, 0.78);
+        font-size: 0.82rem;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(255, 251, 247, 0.94), rgba(252, 246, 240, 0.98));
+        box-shadow: var(--shadow);
+      }
+
+      .hero-photo {
+        overflow: hidden;
+      }
+
+      .hero-photo img {
+        width: 100%;
+        aspect-ratio: 4 / 3.25;
+        object-fit: cover;
+      }
+
+      .hero-photo-copy {
+        padding: 1.45rem 1.45rem 1.6rem;
+      }
+
+      .kicker {
+        color: var(--accent);
+        font-size: 0.72rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .hero-photo-copy h2 {
+        margin-top: 0.7rem;
+        font-size: clamp(1.7rem, 3vw, 2.8rem);
+        line-height: 1.08;
+      }
+
+      .hero-photo-copy p {
+        margin: 0.9rem 0 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .mini-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mini-card {
+        overflow: hidden;
+      }
+
+      .mini-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .mini-copy {
+        padding: 1rem 1rem 1.15rem;
+      }
+
+      .mini-copy strong {
+        display: block;
+        font-size: 1.02rem;
+      }
+
+      .mini-copy p {
+        margin: 0.5rem 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      .feature-grid,
+      .tour-grid,
+      .review-grid,
+      .booking-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .feature-grid {
+        margin-top: 1.5rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .feature-card,
+      .tour-card,
+      .review-card {
+        padding: 1.2rem;
+      }
+
+      .feature-icon {
+        display: inline-flex;
+        width: 2.75rem;
+        height: 2.75rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        background: rgba(219, 123, 46, 0.08);
+        border: 1px solid rgba(219, 123, 46, 0.12);
+        color: var(--accent);
+        font-size: 1.2rem;
+      }
+
+      .feature-card h3,
+      .tour-card h3,
+      .review-card h3 {
+        margin-top: 0.95rem;
+        font-size: 1.2rem;
+      }
+
+      .feature-card p,
+      .tour-card p,
+      .review-card p,
+      .section-copy {
+        color: var(--muted);
+        line-height: 1.72;
+      }
+
+      .section {
+        padding: 4.3rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-heading {
+        max-width: 47rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .section-heading h2 {
+        margin-top: 0.85rem;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      .section-heading p {
+        margin: 0.9rem 0 0;
+      }
+
+      .signature-grid {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: 0.95fr 1.05fr;
+      }
+
+      .content-card {
+        padding: 1.4rem;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .tag {
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(219, 123, 46, 0.08);
+        border: 1px solid rgba(219, 123, 46, 0.12);
+        color: rgba(47, 33, 23, 0.84);
+        font-size: 0.82rem;
+      }
+
+      .stack {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .route-list {
+        margin: 1.2rem 0 0;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .route-item {
+        position: relative;
+        padding-left: 1.35rem;
+      }
+
+      .route-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(239, 154, 75, 0.16);
+      }
+
+      .route-item strong {
+        display: block;
+        font-size: 1rem;
+      }
+
+      .route-item span {
+        display: block;
+        margin-top: 0.35rem;
+        color: var(--muted);
+        line-height: 1.68;
+      }
+
+      .check-list {
+        margin: 1rem 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .check-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.7rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .check {
+        width: 1.2rem;
+        flex: 0 0 auto;
+        color: var(--accent);
+      }
+
+      .include-grid {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .include-item {
+        padding: 0.85rem 0.95rem;
+        border-radius: 18px;
+        border: 1px solid rgba(87, 58, 33, 0.11);
+        background: rgba(255, 255, 255, 0.66);
+        color: rgba(47, 33, 23, 0.8);
+        line-height: 1.55;
+      }
+
+      .split-note {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .status {
+        padding: 1rem 1.05rem;
+        border-radius: 22px;
+      }
+
+      .status strong {
+        display: block;
+        margin-bottom: 0.45rem;
+      }
+
+      .status p {
+        margin: 0.2rem 0 0;
+        line-height: 1.65;
+      }
+
+      .status-good {
+        border: 1px solid rgba(52, 211, 153, 0.24);
+        background: rgba(52, 211, 153, 0.08);
+      }
+
+      .status-warn {
+        border: 1px solid rgba(248, 113, 113, 0.22);
+        background: rgba(248, 113, 113, 0.08);
+      }
+
+      .busot-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 0.38fr 0.62fr;
+      }
+
+      .church-photo {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .church-photo img {
+        width: 100%;
+        aspect-ratio: 4 / 5.2;
+        object-fit: cover;
+      }
+
+      .church-caption {
+        padding: 0.85rem 1rem 1rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      .gallery {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-auto-rows: 175px;
+      }
+
+      .tile {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+      }
+
+      .tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .tile.large {
+        grid-column: span 7;
+        grid-row: span 2;
+      }
+
+      .tile.medium {
+        grid-column: span 5;
+        grid-row: span 2;
+      }
+
+      .tile.wide {
+        grid-column: span 6;
+      }
+
+      .tile.long {
+        grid-column: span 8;
+      }
+
+      .tile.small {
+        grid-column: span 4;
+      }
+
+      .tile-label {
+        position: absolute;
+        left: 1rem;
+        bottom: 0.95rem;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 0.92rem;
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+      }
+
+      .spotlight-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .spotlight-grid > .stack {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+      }
+
+      .spotlight-grid > .stack > :first-child,
+      .spotlight-grid > .stack > .mini-grid {
+        grid-column: 1 / -1;
+      }
+
+      .spotlight-quote {
+        padding: 1.25rem;
+      }
+
+      .spotlight-quote blockquote {
+        margin: 0;
+        font-family: "Iowan Old Style", "Palatino Linotype", serif;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      .spotlight-quote cite {
+        display: block;
+        margin-top: 0.9rem;
+        color: var(--muted);
+        font-style: normal;
+      }
+
+      .tour-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tour-card .eyebrow {
+        margin-bottom: 1rem;
+      }
+
+      .tour-meta {
+        margin-top: 0.55rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .review-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .review-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .review-date {
+        margin-top: 0.3rem;
+        color: rgba(47, 33, 23, 0.56);
+        font-size: 0.88rem;
+      }
+
+      .stars {
+        color: var(--accent);
+        letter-spacing: 0.1em;
+      }
+
+      .booking-grid {
+        grid-template-columns: 0.98fr 1.02fr;
+      }
+
+      .list-columns {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .list-columns h3 {
+        margin-bottom: 0.85rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .plain-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .plain-list li {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .check-grid {
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 1rem;
+      }
+
+      .check-tile {
+        padding: 0.9rem 1rem;
+        border-radius: 18px;
+        border: 1px solid rgba(87, 58, 33, 0.11);
+        background: rgba(255, 255, 255, 0.66);
+        color: rgba(47, 33, 23, 0.8);
+      }
+
+      .cta-photo {
+        overflow: hidden;
+      }
+
+      .cta-photo img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .footer {
+        padding: 1.5rem 0 2.5rem;
+        border-top: 1px solid var(--line);
+        color: rgba(47, 33, 23, 0.56);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      @media (max-width: 1100px) {
+        .hero-grid,
+        .signature-grid,
+        .busot-grid,
+        .booking-grid,
+        .spotlight-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .spotlight-grid > .stack {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-grid,
+        .tour-grid,
+        .review-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .nav,
+        .header-cta {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 2.4rem;
+        }
+
+        .stats,
+        .mini-grid,
+        .feature-grid,
+        .tour-grid,
+        .review-grid,
+        .check-grid,
+        .include-grid,
+        .list-columns,
+        .split-note {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+          grid-auto-rows: 220px;
+        }
+
+        .tile,
+        .tile.large,
+        .tile.medium,
+        .tile.wide,
+        .tile.long,
+        .tile.small {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .container {
+          width: min(100% - 1.1rem, 100%);
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="grid-overlay" aria-hidden="true"></div>
+
+      <header class="header">
+        <div class="container header-inner">
+          <a class="brand" href="#top">
+            <img src="./public/costa-blanca-logo.svg" alt="Costa Blanca Tour logo" width="42" height="42" />
+            <div class="brand-copy">
+              <strong>Costa Blanca Tour</strong>
+              <span>Alicante small-group tours</span>
+            </div>
+          </a>
+          <nav class="nav">
+            <a href="#signature">Signature</a>
+            <a href="#busot">Busot</a>
+            <a href="#tours">Tours</a>
+            <a href="#reviews">Reviews</a>
+          </nav>
+          <a class="button button-primary header-cta" href="#reserve">Check availability</a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="container">
+            <div class="hero-grid">
+              <div>
+                <div class="eyebrow">Small-group tours from Alicante</div>
+                <h1>Caves, Busot, and easy day trips around the Costa Blanca</h1>
+                <p class="intro">
+                  Costa Blanca Tour focuses on simple logistics, small groups, and places that still feel local. The main tour
+                  pairs the Canelobre Caves with Busot, then expands into more day trips and a wine option for guests who want
+                  something a little different.
+                </p>
+
+                <div class="stats">
+                  <div class="stat">
+                    <strong>4.9 / 5</strong>
+                    <span>Guest rating</span>
+                  </div>
+                  <div class="stat">
+                    <strong>399</strong>
+                    <span>Verified reviews</span>
+                  </div>
+                  <div class="stat">
+                    <strong>3 hours</strong>
+                    <span>Signature tour duration</span>
+                  </div>
+                  <div class="stat">
+                    <strong>11 max</strong>
+                    <span>Small-group format</span>
+                  </div>
+                </div>
+
+                <div class="hero-actions">
+                  <a class="button button-primary" href="#signature">View the cave tour</a>
+                  <a class="button button-secondary" href="#tours">See all tours</a>
+                </div>
+
+                <p class="hero-note">
+                  Hosted by Yevgen, often praised in guest reviews for good pacing, clear communication, and a friendly style.
+                </p>
+
+                <div class="signal-list">
+                  <div class="signal">Free cancellation up to 24h</div>
+                  <div class="signal">Reserve now, pay later</div>
+                  <div class="signal">English &amp; Russian guide</div>
+                  <div class="signal">Comfortable round-trip transport</div>
+                </div>
+              </div>
+
+              <div>
+                <article class="panel hero-photo">
+                  <img src="./public/images/canelobre-cave-stage.jpg" alt="Main chamber of Canelobre Cave prepared for an event" />
+                  <div class="hero-photo-copy">
+                    <div class="kicker">Signature stop</div>
+                    <h2>Canelobre Cave at the center of the tour</h2>
+                    <p>
+                      A short drive from Alicante leads into one of the most impressive cave interiors in the area, followed by a
+                      slower second half in Busot.
+                    </p>
+                  </div>
+                </article>
+
+                <div class="mini-grid">
+                  <article class="panel mini-card">
+                    <img src="./public/images/busot-castle-village-overlook.jpg" alt="Aerial view of the Castle of Busot ruins and the village" />
+                    <div class="mini-copy">
+                      <strong>Castle and village from above</strong>
+                      <p>Castle ruins in the foreground, with the village gathered closely behind them.</p>
+                    </div>
+                  </article>
+                  <article class="panel mini-card">
+                    <img src="./public/images/alicante-old-town-street.jpg" alt="Old town street in Alicante with flags overhead" />
+                    <div class="mini-copy">
+                      <strong>Alicante old town street</strong>
+                      <p>A simple city-based starting point for short excursions outside Alicante.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <article class="panel feature-card">
+                <div class="feature-icon">1</div>
+                <h3>Small groups</h3>
+                <p>Enough structure to feel easy, with enough space to never feel rushed.</p>
+              </article>
+              <article class="panel feature-card">
+                <div class="feature-icon">2</div>
+                <h3>Clear logistics</h3>
+                <p>Simple pickup and drop-off points around Alicante city.</p>
+              </article>
+              <article class="panel feature-card">
+                <div class="feature-icon">3</div>
+                <h3>Local variety</h3>
+                <p>Cave, village, viewpoints, and culture in one well-paced tour.</p>
+              </article>
+              <article class="panel feature-card">
+                <div class="feature-icon">4</div>
+                <h3>Trusted hosting</h3>
+                <p>Reviews consistently mention calm communication and a friendly atmosphere.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="signature">
+          <div class="container">
+            <div class="section-heading">
+              <div class="kicker">Signature Tour</div>
+              <h2>From Canelobre Cave to Busot in one well-paced small-group tour</h2>
+              <p class="section-copy">
+                A clear half-day plan: cave geology first, then Busot culture, with comfortable round-trip transport and no rushed
+                transitions.
+              </p>
+            </div>
+
+            <div class="signature-grid">
+              <div class="stack">
+                <article class="panel content-card">
+                  <div class="tag-row">
+                    <div class="tag">3 hours</div>
+                    <div class="tag">Up to 11 guests</div>
+                    <div class="tag">English, Russian</div>
+                  </div>
+                  <h3 style="margin-top: 1rem;">Tour itinerary / highlights</h3>
+                  <div class="route-list">
+                    <div class="route-item">
+                      <strong>Pickup in Alicante</strong>
+                      <span>Choose one of five central meeting points and settle in for an easy start.</span>
+                    </div>
+                    <div class="route-item">
+                      <strong>Scenic drive to Busot</strong>
+                      <span>A short mountain transfer with time to take in the landscape on the way.</span>
+                    </div>
+                    <div class="route-item">
+                      <strong>Canelobre Caves + Busot walk</strong>
+                      <span>Visit the cave, then continue through the village, old church, museum area, and castle surroundings.</span>
+                    </div>
+                    <div class="route-item">
+                      <strong>Return to Alicante</strong>
+                      <span>Comfortable drop-off back at the same central city points.</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel content-card">
+                  <h3>Included</h3>
+                  <div class="include-grid">
+                    <div class="include-item">Round-trip transport in an air-conditioned vehicle</div>
+                    <div class="include-item">Canelobre cave entry</div>
+                    <div class="include-item">Guide inside the cave</div>
+                    <div class="include-item">Ethnic Music Museum entry</div>
+                    <div class="include-item">Walk through Busot center</div>
+                    <div class="include-item">Old church visit</div>
+                    <div class="include-item">Free time near the castle ruins</div>
+                    <div class="include-item">Bottled water in the vehicle</div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="stack">
+                <article class="panel hero-photo">
+                  <img src="./public/images/canelobre-cave-chamber.jpg" alt="Colorful stalactites and stalagmites inside Canelobre Cave" />
+                  <div class="hero-photo-copy">
+                    <div class="kicker">At the cave</div>
+                    <h2 style="font-size: clamp(1.5rem, 2.4vw, 2.25rem);">Canelobre Cave sets the tone for the tour</h2>
+                    <ul class="check-list">
+                      <li><span class="check">+</span>Explore Canelobre Cave inside Upper Jurassic limestone formed around 145 million years ago.</li>
+                      <li><span class="check">+</span>Stand beneath a huge 70-meter vault, often noted as one of the highest cave chambers in Spain.</li>
+                      <li><span class="check">+</span>Learn how the cave connects to the Spanish Civil War as well as to the geology of the area.</li>
+                      <li><span class="check">+</span>Finish in Busot, where the tour slows down into village views, church architecture, and castle ruins.</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <div class="split-note">
+                  <div class="panel status status-good">
+                    <strong>Booking confidence</strong>
+                    <p>Cancel up to 24 hours in advance for a full refund.</p>
+                    <p>Reserve now and keep plans flexible until the day is confirmed.</p>
+                  </div>
+                  <div class="panel status status-warn">
+                    <strong>Not suitable for</strong>
+                    <p>People with claustrophobia</p>
+                    <p>Wheelchair users</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="busot">
+          <div class="container">
+            <div class="section-heading">
+              <div class="kicker">Busot</div>
+              <h2>Why the Busot stop matters</h2>
+              <p class="section-copy">
+                The added Busot imagery helps explain the second half of the tour: less spectacle, more texture. Rooftops, stone
+                paths, mountain edges, and a slower local rhythm.
+              </p>
+            </div>
+
+            <div class="busot-grid">
+              <div class="stack">
+                <article class="panel content-card">
+                  <h3>A better balance after the cave</h3>
+                  <ul class="check-list">
+                    <li><span class="check">+</span>The aerial photos make it clear how tightly the village wraps around the hill and castle remains.</li>
+                    <li><span class="check">+</span>The church interior and musical heritage add a softer cultural stop after the cave visit.</li>
+                    <li><span class="check">+</span>The tour works because the second half feels quieter and more local, not like a checklist stop.</li>
+                  </ul>
+                </article>
+
+                <figure class="panel church-photo">
+                  <img src="./public/images/busot-church-concert.jpg" alt="Concert inside the old church in Busot" />
+                  <figcaption class="church-caption">Concert inside Busot's old church, a quieter cultural stop after the cave visit.</figcaption>
+                </figure>
+              </div>
+
+              <div class="gallery">
+                <div class="tile large">
+                  <img src="./public/images/busot-castle-plateau.jpg" alt="Castle plateau above Busot with mountains behind it" />
+                  <div class="tile-label">Castle plateau with mountain backdrop</div>
+                </div>
+                <div class="tile medium">
+                  <img src="./public/images/busot-castle-village-overlook.jpg" alt="Aerial view of the Castle of Busot ruins and the village" />
+                  <div class="tile-label">Castle ruins above the village</div>
+                </div>
+                <div class="tile wide">
+                  <img src="./public/images/busot-village-hillside.jpg" alt="Busot village with hills and mountain landscape around it" />
+                  <div class="tile-label">Village and surrounding hills</div>
+                </div>
+                <div class="tile wide">
+                  <img src="./public/images/busot-rooftops-mountain.jpg" alt="Busot rooftops with mountain backdrop" />
+                  <div class="tile-label">Rooftops with mountain backdrop</div>
+                </div>
+                <div class="tile long">
+                  <img src="./public/images/busot-old-town-ridge.jpg" alt="Busot old town edge looking across the valley" />
+                  <div class="tile-label">Old town edge and valley beyond</div>
+                </div>
+                <div class="tile small">
+                  <img src="./public/images/alicante-old-town-street.jpg" alt="Old town street in Alicante with hanging flags" />
+                  <div class="tile-label">Old town street in Alicante</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="winery-tour">
+          <div class="container">
+            <div class="section-heading">
+              <div class="kicker">New Tour</div>
+              <h2>Old winery, guided tastings, Gaudi-style church, and Castle of Mola</h2>
+              <p class="section-copy">
+                This tour adds a stronger short-format option: a visit to a historic Spanish winery founded in 1707, a guided
+                tasting of three wines with snacks, and bonus stops linked to Novelda's Gaudi-style church and the Castle of Mola.
+              </p>
+            </div>
+
+            <div class="spotlight-grid">
+              <article class="panel hero-photo">
+                <img src="./public/images/winery-estate-house.jpg" alt="Historic winery estate house near Alicante" />
+                <div class="hero-photo-copy">
+                  <div class="kicker">Alicante: Old Winery with Tastings &amp; Gaudi's style of Church</div>
+                  <h2 style="font-size: clamp(1.8rem, 3vw, 2.8rem);">A short, easy wine tour with history, architecture, and tasting</h2>
+                  <p>
+                    Top rated at 4.9 out of 5 from 94 reviews, this small-group experience combines an 18th-century estate that
+                    belonged to the Marquis of La Romana, a guided tasting, and bonus architecture and castle stops.
+                  </p>
+                </div>
+              </article>
+
+              <div class="stack">
+                <article class="panel content-card">
+                  <div class="tag-row">
+                    <div class="tag">4.9 / 5 · 94 reviews</div>
+                    <div class="tag">3 hours</div>
+                    <div class="tag">English</div>
+                    <div class="tag">11 guests max</div>
+                    <div class="tag">Pickup included</div>
+                    <div class="tag">Skip the ticket line</div>
+                  </div>
+                  <h3 style="margin-top: 1rem;">What guests get on this tour</h3>
+                  <ul class="check-list">
+                    <li><span class="check">+</span>Guided visit to the old Spanish winery and farmhouse founded in 1707, once owned by the Marquis of La Romana</li>
+                    <li><span class="check">+</span>Walk through the production spaces including the fermentation room, barrel room, and bottling area</li>
+                    <li><span class="check">+</span>Learn the full wine-making process, from organically grown grapes through bottling</li>
+                    <li><span class="check">+</span>Tasting of 3 wines in the restaurant: white, rose, and red, each explained in detail</li>
+                    <li><span class="check">+</span>Breadsticks, olives, and a tapa served with the tasting</li>
+                    <li><span class="check">+</span>Bonus stop at the Gaudi-style church and the 12th-century Castle of Mola</li>
+                  </ul>
+                </article>
+
+                <div class="mini-grid" style="margin-top: 0;">
+                  <article class="panel mini-card">
+                    <img src="./public/images/winery-exterior.jpg" alt="Winery courtyard and main entrance" />
+                    <div class="mini-copy">
+                      <strong>Courtyard and main entrance</strong>
+                      <p>The arrival sets the tone before the guided walk through the estate and production spaces.</p>
+                    </div>
+                  </article>
+                  <article class="panel mini-card">
+                    <img src="./public/images/winery-tasting-room.jpg" alt="Guests in the winery tasting room" />
+                    <div class="mini-copy">
+                      <strong>Guided tasting room</strong>
+                      <p>Three wines are tasted with explanation, in a setting that feels more hosted than rushed.</p>
+                    </div>
+                  </article>
+                </div>
+
+                <article class="panel spotlight-quote">
+                  <div class="kicker">Recent review</div>
+                  <blockquote>
+                    “We had a great time. Ride was on time. Super friendly. Almost a private tour since it was not high season.
+                    Wine and snacks were very tasty.”
+                  </blockquote>
+                  <cite>Annabelhe, Canada · February 25, 2026</cite>
+                </article>
+
+                <article class="panel content-card">
+                  <h3>Includes and practical notes</h3>
+                  <ul class="check-list">
+                    <li><span class="check">+</span>Round-trip transportation and bottled water in the car</li>
+                    <li><span class="check">+</span>Guided visit of the vineyard, old house, winery, and production facilities</li>
+                    <li><span class="check">+</span>Pickup included, with the vehicle model and plate number shared before arrival</li>
+                    <li><span class="check">+</span>Free cancellation up to 24 hours and reserve now, pay later</li>
+                    <li><span class="check">+</span>Lunch is not included, but can be arranged in advance via the private tour option, or ordered on site if tables and timing allow</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="tours">
+          <div class="container">
+            <div class="section-heading">
+              <div class="kicker">More Tours</div>
+              <h2>A small portfolio, not a crowded catalogue</h2>
+              <p class="section-copy">
+                Alongside the cave tour, the site now includes the old-winery church tour, a mountain-and-waterfall day trip, and
+                a more tailored private wine option for Alicante.
+              </p>
+            </div>
+
+            <div class="tour-grid">
+              <article class="panel tour-card">
+                <div class="eyebrow">Signature Tour</div>
+                <h3>Canelobre Caves &amp; Busot</h3>
+                <div class="tour-meta">3 hours · Up to 11 guests</div>
+                <p>
+                  The core tour: easy pickup, mountain transfer, the cave visit, and time in Busot without trying to cram too much
+                  into the day.
+                </p>
+                <ul class="check-list">
+                  <li><span class="check">+</span>Cave visit with history and geology explained simply</li>
+                  <li><span class="check">+</span>Busot village, church, museum stop, and castle surroundings</li>
+                  <li><span class="check">+</span>Well-suited to couples, families, and small groups based in Alicante</li>
+                </ul>
+              </article>
+
+              <article class="panel tour-card">
+                <div class="eyebrow">New Day Tour</div>
+                <h3>Guadalest &amp; Fonts d'Algar</h3>
+                <div class="tour-meta">7 hours · Small group</div>
+                <p>
+                  A fuller day built around one of the Costa Blanca's best-known hilltop villages and the natural spring pools and
+                  waterfalls at Fonts d'Algar.
+                </p>
+                <ul class="check-list">
+                  <li><span class="check">+</span>Guadalest fortress village and reservoir views</li>
+                  <li><span class="check">+</span>Protected natural area at Fonts d'Algar</li>
+                  <li><span class="check">+</span>Good option for guests who want a full-day mountain tour</li>
+                </ul>
+              </article>
+
+              <article class="panel tour-card">
+                <div class="eyebrow">Wine Offering</div>
+                <h3>Private Alicante Wine Tour</h3>
+                <div class="tour-meta">4.5 to 5 hours · Private or small group</div>
+                <p>
+                  A relaxed tasting-focused tour through the Alicante DOP, with space for Monastrell, Fondillon, and a slower
+                  countryside pace.
+                </p>
+                <ul class="check-list">
+                  <li><span class="check">+</span>Built around Alicante wine culture rather than rushed cellar hopping</li>
+                  <li><span class="check">+</span>Focus on local grapes and historic regional styles</li>
+                  <li><span class="check">+</span>Can be shaped as a private outing or a small hosted group</li>
+                </ul>
+              </article>
+
+              <article class="panel tour-card">
+                <div class="eyebrow">Top Rated Short Tour</div>
+                <h3>Old Winery, Tastings &amp; Gaudi-style Church</h3>
+                <div class="tour-meta">3 hours · English · 11 guests max</div>
+                <p>
+                  Historic winery founded in 1707, production-room visit, 3-wine tasting with snacks, and bonus stops at the
+                  Gaudi-style church and Castle of Mola.
+                </p>
+                <ul class="check-list">
+                  <li><span class="check">+</span>Pickup included, with vehicle details shared before arrival</li>
+                  <li><span class="check">+</span>Includes white, rose, and red tasting with breadsticks, olives, and a tapa</li>
+                  <li><span class="check">+</span>Backed by a 4.9 / 5 rating from 94 reviews</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="reviews">
+          <div class="container">
+            <div class="section-heading">
+              <div class="kicker">Reviews</div>
+              <h2>What people keep mentioning</h2>
+              <p class="section-copy">
+                The same themes keep returning: small groups, easy transport, clear communication, interesting local context, and a
+                guide who keeps the day relaxed instead of rushed.
+              </p>
+            </div>
+
+            <div class="review-grid">
+              <article class="panel review-card">
+                <div class="review-head">
+                  <h3>Eleanor</h3>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-date">February 17, 2026</div>
+                <p>From start to finish the experience was seamless. Transport was easy, Busot was lovely, and the whole day felt well looked after.</p>
+              </article>
+              <article class="panel review-card">
+                <div class="review-head">
+                  <h3>Cath</h3>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-date">February 16, 2026</div>
+                <p>Yevgen was very informative with added humour. A lovely guide and a very easy day overall.</p>
+              </article>
+              <article class="panel review-card">
+                <div class="review-head">
+                  <h3>Susie</h3>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-date">February 11, 2026</div>
+                <p>The group was small, we never felt rushed, and there was plenty of time to explore and take photos.</p>
+              </article>
+              <article class="panel review-card">
+                <div class="review-head">
+                  <h3>Aaron</h3>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-date">February 3, 2026</div>
+                <p>It was a last-minute booking and a very good one. Safe driving, comfortable transport, and clear local history throughout.</p>
+              </article>
+              <article class="panel review-card">
+                <div class="review-head">
+                  <h3>Bianca</h3>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-date">February 1, 2026</div>
+                <p>Everything was clear and personal. The guide was sincere, communicative, and gave full attention to the group.</p>
+              </article>
+              <article class="panel review-card">
+                <div class="review-head">
+                  <h3>Katarzyna</h3>
+                  <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-date">January 19, 2026</div>
+                <p>Stress-free logistics, interesting facts, and a genuinely personal atmosphere. It was easy to recommend after the tour.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="reserve">
+          <div class="container">
+            <div class="section-heading">
+              <div class="kicker">Practical Info</div>
+              <h2>Simple pickup points and a clear booking handoff</h2>
+              <p class="section-copy">
+                The website keeps the booking story straightforward. Guests choose the tour, send the main details, and pick the
+                meeting point that suits them best.
+              </p>
+            </div>
+
+            <div class="booking-grid">
+              <div class="stack">
+                <article class="panel content-card">
+                  <h3>Pickup and drop-off</h3>
+                  <div class="list-columns">
+                    <div>
+                      <h3>Pickup</h3>
+                      <ul class="plain-list">
+                        <li>Hotel Port Alicante City &amp; Beach</li>
+                        <li>Supermercados Dia</li>
+                        <li>Hotel Albahia</li>
+                        <li>Melia Alicante</li>
+                        <li>Hotel Travelodge Alicante Puerto</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3>Drop-off</h3>
+                      <ul class="plain-list">
+                        <li>Supermercados Dia</li>
+                        <li>Hotel Albahia</li>
+                        <li>Melia Alicante</li>
+                        <li>Hotel Travelodge Alicante Puerto</li>
+                        <li>Hotel Port Alicante City &amp; Beach</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel content-card">
+                  <h3>What to send when booking</h3>
+                  <div class="check-grid">
+                    <div class="check-tile">Preferred tour</div>
+                    <div class="check-tile">Requested date</div>
+                    <div class="check-tile">Number of guests</div>
+                    <div class="check-tile">Preferred pickup point</div>
+                  </div>
+                </article>
+              </div>
+
+              <article class="panel">
+                <div class="cta-photo">
+                  <img src="./public/images/alicante-old-town-street.jpg" alt="Old town street in Alicante" />
+                </div>
+                <div class="content-card">
+                  <div class="kicker">From the city</div>
+                  <h3 style="margin-top: 0.8rem; font-size: clamp(1.8rem, 3vw, 2.7rem);">Good for travelers who want something local and well-organized</h3>
+                  <p class="section-copy" style="margin-top: 0.9rem;">
+                    The tours are designed for guests staying in Alicante who want a clear plan, good hosting, and a trip that
+                    still feels personal.
+                  </p>
+                  <ul class="check-list">
+                    <li><span class="check">+</span>Clear inclusions and a calm pace are positioned as the main strengths.</li>
+                    <li><span class="check">+</span>The additional tours broaden the offer without making the site feel overloaded.</li>
+                    <li><span class="check">+</span>The wine tour is framed as a softer, slower option for guests who prefer tasting and countryside.</li>
+                  </ul>
+                  <div class="hero-actions" style="margin-top: 1.2rem;">
+                    <a class="button button-primary" href="#tours">Compare tours</a>
+                    <a class="button button-secondary" href="#top">Back to top</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div class="brand">
+            <img src="./public/costa-blanca-logo.svg" alt="Costa Blanca Tour logo" width="28" height="28" />
+            <div class="brand-copy">
+              <strong style="font-size: 0.95rem;">Costa Blanca Tour</strong>
+            </div>
+          </div>
+          <div>Small-group cave, village, day-trip, and wine experiences based around Alicante.</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
