@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Costa Blanca Tour | Small-Group Tours from Alicante</title>
+    <meta name="description" content="Small-group tours around Alicante: Canelobre Caves, Busot, curated day trips, and an Alicante wine tour." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #faf6f1;
+        --bg-dark: #1a1410;
+        --bg-darker: #12100d;
+        --text: #2f2117;
+        --text-light: rgba(255,255,255,0.92);
+        --muted: #7a6b5d;
+        --muted-light: rgba(255,255,255,0.6);
+        --accent: #d4853b;
+        --accent-hover: #e9a05c;
+        --accent-soft: rgba(212,133,59,0.12);
+        --line: rgba(87,58,33,0.1);
+        --line-light: rgba(255,255,255,0.08);
+        --panel: rgba(255,251,247,0.95);
+        --shadow-warm: 0 20px 50px rgba(100,60,20,0.10);
+        --shadow-dark: 0 20px 50px rgba(0,0,0,0.35);
+        --radius: 24px;
+        --radius-sm: 16px;
+        --font-display: 'Playfair Display', 'Iowan Old Style', 'Palatino Linotype', serif;
+        --font-body: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      ul { list-style: none; }
+
+      .container {
+        width: min(1200px, calc(100% - 2.5rem));
+        margin: 0 auto;
+      }
+
+      /* ── HEADER ── */
+      .header {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        z-index: 30;
+        padding: 1.25rem 0;
+      }
+
+      .nav-pill {
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 999px;
+        padding: 0.5rem 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 2.2rem;
+      }
+
+      .nav-pill a {
+        color: var(--muted-light);
+        font-size: 0.92rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition: color 0.2s ease;
+      }
+
+      .nav-pill a:hover, .nav-pill a:focus-visible { color: #fff; }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .brand img { filter: brightness(10); }
+
+      .brand-name {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text-light);
+      }
+
+      /* ── FLOATING STICKY NAV ── */
+      .floating-nav {
+        position: fixed;
+        top: 1.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
+        background: rgba(255,252,248,0.88);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(87,58,33,0.1);
+        border-radius: 999px;
+        padding: 0.4rem 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        box-shadow: 0 4px 24px rgba(80,50,20,0.08);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .floating-nav.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .floating-nav a {
+        padding: 0.5rem 1.1rem;
+        border-radius: 999px;
+        font-size: 0.84rem;
+        font-weight: 500;
+        color: var(--muted);
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .floating-nav a:hover {
+        background: rgba(212,133,59,0.08);
+        color: var(--text);
+      }
+
+      .floating-nav a.active {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .floating-nav .nav-book-btn {
+        background: var(--bg-dark);
+        color: #fff;
+        padding: 0.5rem 1.3rem;
+        border-radius: 999px;
+        font-weight: 600;
+        margin-left: 0.3rem;
+        transition: background 0.2s ease, transform 0.15s ease;
+      }
+
+      .floating-nav .nav-book-btn:hover {
+        background: #2a2018;
+        transform: translateY(-1px);
+      }
+
+      .floating-nav .nav-book-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 2.2rem;
+      }
+
+      .nav a {
+        color: var(--muted-light);
+        font-size: 0.92rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition: color 0.2s ease;
+      }
+
+      .nav a:hover, .nav a:focus-visible { color: #fff; }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.6rem;
+        border-radius: 999px;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover { transform: translateY(-1px); }
+      .btn:active { transform: translateY(0); }
+      .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(212,133,59,0.25);
+      }
+      .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 12px 32px rgba(212,133,59,0.3); }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--text-light);
+        border: 1.5px solid rgba(255,255,255,0.25);
+      }
+      .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+
+      .btn-dark {
+        background: var(--bg-dark);
+        color: var(--text-light);
+      }
+      .btn-dark:hover { background: #2a2018; }
+
+      .btn-white {
+        background: #fff;
+        color: var(--text);
+      }
+      .btn-white:hover { background: #f5f0ea; }
+
+      .header-contact { }
+
+      /* ── HERO ── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(18,14,10,0.5) 0%, rgba(30,18,8,0.15) 35%, rgba(18,14,10,0.65) 100%),
+          linear-gradient(180deg, rgba(180,100,30,0.12) 0%, transparent 60%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 12rem 0 2rem;
+      }
+
+      .hero-content h1 {
+        font-family: 'DM Sans', 'Inter', sans-serif;
+        font-size: clamp(3rem, 6.5vw, 5.2rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        max-width: 780px;
+        margin: 0 auto;
+        background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.95) 35%, rgba(230,200,160,0.82) 75%, rgba(195,155,100,0.65) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 4px 30px rgba(0,0,0,0.25));
+      }
+
+      .hero-sub {
+        margin-top: 1.2rem;
+        color: rgba(255,255,255,0.72);
+        font-size: 1.1rem;
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+      }
+
+      /* ── BOOKING BAR ── */
+      .booking-bar {
+        position: relative;
+        z-index: 2;
+        margin: 2.5rem auto 0;
+        max-width: 780px;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 999px;
+        padding: 0.5rem 0.65rem 0.5rem 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+
+      .booking-field {
+        flex: 1;
+        padding: 0.85rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        border-right: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .booking-field:last-of-type { border-right: none; }
+
+      .booking-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.5);
+      }
+
+      .booking-value {
+        font-size: 0.92rem;
+        color: var(--text-light);
+        font-weight: 500;
+      }
+
+      .booking-bar .btn-primary {
+        padding: 0.85rem 2rem;
+        flex-shrink: 0;
+        margin-right: 0.2rem;
+      }
+
+      /* ── HERO THUMBNAILS ── */
+      .hero-thumbs {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .hero-thumb {
+        width: 140px;
+        height: 90px;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        border: 2px solid rgba(255,255,255,0.2);
+        transition: border-color 0.2s ease, transform 0.2s ease;
+        cursor: pointer;
+      }
+
+      .hero-thumb:hover {
+        border-color: rgba(255,255,255,0.5);
+        transform: translateY(-2px);
+      }
+
+      .hero-thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      .hero-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ── SECTION COMMON ── */
+      .section {
+        padding: 5.5rem 0;
+      }
+
+      .section-light { background: var(--bg); }
+      .section-white { background: #fff; }
+      .section-dark { background: var(--bg-dark); color: var(--text-light); }
+      .section-darker { background: var(--bg-darker); color: var(--text-light); }
+
+      .section-header {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 3.2rem;
+      }
+
+      .kicker {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-dark .kicker { color: var(--accent-hover); }
+
+      .section-header h2 {
+        font-family: var(--font-display);
+        font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .section-header h2 span {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .section-header p {
+        margin-top: 1rem;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.75;
+      }
+
+      .section-dark .section-header p { color: var(--muted-light); }
+
+      /* ── TOUR TABS ── */
+      .tour-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+        margin-bottom: 2.8rem;
+        flex-wrap: wrap;
+      }
+
+      .tour-tab {
+        padding: 0.55rem 1.3rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: transparent;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--muted);
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .tour-tab:hover {
+        border-color: rgba(87,58,33,0.25);
+        color: var(--text);
+      }
+
+      .tour-tab.active {
+        background: var(--bg-dark);
+        color: #fff;
+        border-color: var(--bg-dark);
+      }
+
+      .tour-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      /* ── TOUR CAROUSEL ── */
+      .tour-carousel-wrap {
+        position: relative;
+      }
+
+      .tour-carousel {
+        display: flex;
+        gap: 1.2rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0 1.5rem;
+        scrollbar-width: none;
+        cursor: grab;
+      }
+
+      .tour-carousel:active { cursor: grabbing; }
+      .tour-carousel::-webkit-scrollbar { display: none; }
+
+      .tour-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        flex-shrink: 0;
+        width: 260px;
+        height: 380px;
+        scroll-snap-align: start;
+        cursor: pointer;
+        box-shadow: 0 8px 30px rgba(60,35,10,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .tour-card:first-child { margin-left: calc(50% - 560px); }
+      .tour-card:last-child { margin-right: calc(50% - 560px); }
+
+      .tour-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 44px rgba(60,35,10,0.18);
+      }
+
+      .tour-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      .tour-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .tour-card:hover img { transform: scale(1.04); }
+
+      .tour-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 50%, rgba(12,8,4,0.72) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.3rem;
+      }
+
+      .tour-card-overlay h3 {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.25;
+      }
+
+      .tour-card-overlay p {
+        margin-top: 0.25rem;
+        color: rgba(255,255,255,0.7);
+        font-size: 0.82rem;
+        line-height: 1.45;
+      }
+
+      /* Carousel navigation */
+      .carousel-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      .carousel-track {
+        width: 200px;
+        height: 3px;
+        background: rgba(87,58,33,0.1);
+        border-radius: 3px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .carousel-thumb {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 40%;
+        background: var(--accent);
+        border-radius: 3px;
+        transition: left 0.15s ease;
+      }
+
+      .carousel-btn {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--text);
+        font-size: 0.85rem;
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .carousel-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+      .carousel-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      /* ── PRICING PACKAGES ── */
+      .packages {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.4rem;
+      }
+
+      .package {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .package:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-warm);
+      }
+
+      .package-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        margin: 0 auto 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        border: 1px solid rgba(212,133,59,0.15);
+        color: var(--accent);
+        font-size: 1.3rem;
+      }
+
+      .package h3 {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+
+      .package-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.3rem;
+      }
+
+      .package-price span {
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: var(--muted);
+      }
+
+      .package-duration {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 1.2rem;
+      }
+
+      .package-features {
+        text-align: left;
+        margin-bottom: 1.5rem;
+      }
+
+      .package-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        padding: 0.45rem 0;
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .package-features li::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+        margin-top: 0.5rem;
+      }
+
+      .package .btn { width: 100%; }
+
+      /* ── GALLERY ── */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: 160px;
+        gap: 1rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-item:hover img { transform: scale(1.05); }
+
+      .gallery-item::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover::after { opacity: 1; }
+
+      .g-wide { grid-column: span 7; grid-row: span 2; }
+      .g-tall { grid-column: span 5; grid-row: span 2; }
+      .g-half { grid-column: span 6; }
+      .g-third { grid-column: span 4; }
+      .g-two-third { grid-column: span 8; }
+
+      /* ── HOW TO BOOK ── */
+      .process-icons {
+        display: flex;
+        justify-content: center;
+        gap: 3.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .process-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.65rem;
+        cursor: default;
+      }
+
+      .process-icon-circle {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        border: 1.5px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--accent);
+        background: var(--accent-soft);
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .process-icon:hover .process-icon-circle {
+        background: rgba(212,133,59,0.18);
+        border-color: var(--accent);
+      }
+
+      .process-icon span {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--muted);
+      }
+
+      .steps-heading {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .steps-heading h2 {
+        font-family: var(--font-display);
+        font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+        font-weight: 700;
+        line-height: 1.06;
+        letter-spacing: -0.03em;
+      }
+
+      .steps-label {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        border: 1px solid rgba(212,133,59,0.18);
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.4rem;
+      }
+
+      .step-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.8rem 1.4rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .step-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-warm);
+      }
+
+      .step-number {
+        font-family: var(--font-display);
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: rgba(212,133,59,0.2);
+        line-height: 1;
+        margin-bottom: 0.8rem;
+      }
+
+      .step-card h3 {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-card p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ── REVIEWS ── */
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
+      }
+
+      .review-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.8rem 1.5rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .review-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-warm);
+      }
+
+      .review-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.3rem;
+      }
+
+      .review-name {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+      }
+
+      .review-stars {
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        font-size: 0.95rem;
+      }
+
+      .review-date {
+        font-size: 0.82rem;
+        color: rgba(47,33,23,0.45);
+        margin-bottom: 0.8rem;
+      }
+
+      .review-card p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.7;
+      }
+
+      /* ── CTA SECTION ── */
+      .cta-section {
+        position: relative;
+        overflow: hidden;
+        background: var(--bg-darker);
+      }
+
+      .cta-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 520px;
+      }
+
+      .cta-image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .cta-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(18,16,13,0.05) 0%, rgba(18,16,13,0.15) 100%);
+      }
+
+      .cta-center {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        background: radial-gradient(ellipse 48% 65% at center, rgba(18,16,13,0.95) 0%, rgba(18,16,13,0.82) 40%, rgba(18,16,13,0.35) 70%, transparent 100%);
+      }
+
+      .cta-logo {
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-logo img { filter: brightness(10); opacity: 0.7; }
+
+      .cta-center h2 {
+        font-family: var(--font-display);
+        font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .cta-center p {
+        margin: 1rem 0 2rem;
+        color: var(--muted-light);
+        font-size: 0.98rem;
+        line-height: 1.7;
+        max-width: 480px;
+      }
+
+      .cta-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .cta-social {
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .cta-social a {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255,255,255,0.5);
+        font-size: 0.8rem;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      }
+
+      .cta-social a:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: rgba(212,133,59,0.08);
+      }
+
+      .cta-social a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      /* ── FOOTER ── */
+      .footer {
+        background: var(--bg-darker);
+        border-top: 1px solid var(--line-light);
+        padding: 2rem 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .footer-brand img { filter: brightness(10); opacity: 0.6; }
+
+      .footer-brand span {
+        font-family: var(--font-display);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.5);
+      }
+
+      .footer-copy {
+        color: rgba(255,255,255,0.3);
+        font-size: 0.82rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 1.8rem;
+      }
+
+      .footer-links a {
+        color: rgba(255,255,255,0.4);
+        font-size: 0.85rem;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .packages { grid-template-columns: repeat(2, 1fr); }
+        .steps-grid { grid-template-columns: repeat(2, 1fr); }
+        .process-icons { gap: 2rem; flex-wrap: wrap; }
+        .tour-card { width: 220px !important; height: 320px !important; }
+        .tour-card:first-child { margin-left: 1rem !important; }
+        .tour-card:last-child { margin-right: 1rem !important; }
+        .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+        .floating-nav { display: none; }
+      }
+
+      @media (max-width: 768px) {
+        .nav, .nav-pill, .header-contact { display: none; }
+        .floating-nav { display: none; }
+        .hero-content h1 { font-size: 2.4rem; }
+        .booking-bar { flex-direction: column; border-radius: var(--radius); padding: 1rem; gap: 0; }
+        .booking-field { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0.7rem 1rem; }
+        .booking-field:last-of-type { border-bottom: none; }
+        .booking-bar .btn-primary { width: 100%; margin-top: 0.5rem; }
+        .hero-thumbs { gap: 0.5rem; }
+        .hero-thumb { width: 100px; height: 65px; }
+        .tour-card { width: 200px !important; height: 290px !important; }
+        .tour-card:first-child { margin-left: 0.5rem !important; }
+        .tour-card:last-child { margin-right: 0.5rem !important; }
+        .packages { grid-template-columns: 1fr; }
+        .reviews-grid { grid-template-columns: 1fr; }
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          grid-auto-rows: 200px;
+        }
+        .g-wide, .g-tall, .g-half, .g-third, .g-two-third { grid-column: auto; grid-row: auto; }
+        .steps-grid { grid-template-columns: 1fr; }
+        .process-icons { gap: 1.2rem; }
+        .cta-actions { flex-direction: column; align-items: center; }
+        .cta-layout { grid-template-columns: 1fr; min-height: auto; }
+        .cta-image { min-height: 200px; }
+        .cta-center { position: relative; background: var(--bg-darker); padding: 3rem 1.5rem; }
+        .footer-inner { flex-direction: column; text-align: center; }
+        .footer-links { flex-wrap: wrap; justify-content: center; }
+      }
+
+      /* ── MENU BUTTON (mobile) ── */
+      .menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.3rem;
+      }
+
+      .menu-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      @media (max-width: 768px) {
+        .menu-btn { display: block; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ── HEADER ── -->
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="#top">
+          <img src="./public/costa-blanca-logo.svg" alt="Costa Blanca Tour" width="36" height="36" />
+          <span class="brand-name">Costa Blanca Tour</span>
+        </a>
+        <nav class="nav-pill">
+          <a href="#top">Home</a>
+          <a href="#tours">Tours</a>
+          <a href="#packages">Packages</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#book">Book</a>
+        </nav>
+        <a class="btn btn-primary header-contact" href="#contact">Contact</a>
+        <button class="menu-btn" aria-label="Menu">&#9776;</button>
+      </div>
+    </header>
+
+    <!-- ── FLOATING STICKY NAV ── -->
+    <nav class="floating-nav" id="floatingNav">
+      <a href="#top" class="active">Home</a>
+      <a href="#tours">Tours</a>
+      <a href="#packages">Packages</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#book">Book</a>
+      <a href="#contact" class="nav-book-btn">Contact</a>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="top">
+      <div class="hero-bg">
+        <img src="./public/images/busot-castle-plateau.jpg" alt="Mountain landscape of Costa Blanca" />
+      </div>
+
+      <div class="container hero-content">
+        <h1>Unforgettable Cave &amp; Village Tours from Alicante</h1>
+        <p class="hero-sub">Small-group adventures through ancient caves, charming villages, and historic wineries along the Costa Blanca.</p>
+      </div>
+
+      <div class="container">
+        <div class="booking-bar">
+          <div class="booking-field">
+            <span class="booking-label">Tour</span>
+            <span class="booking-value">Canelobre &amp; Busot</span>
+          </div>
+          <div class="booking-field">
+            <span class="booking-label">Date</span>
+            <span class="booking-value">Choose a date</span>
+          </div>
+          <div class="booking-field">
+            <span class="booking-label">Guests</span>
+            <span class="booking-value">2 Guests</span>
+          </div>
+          <a class="btn btn-primary" href="#contact">Search</a>
+        </div>
+
+        <div class="hero-thumbs">
+          <div class="hero-thumb" tabindex="0">
+            <img src="./public/images/busot-castle-village-overlook.jpg" alt="Busot castle overlook" />
+          </div>
+          <div class="hero-thumb" tabindex="0">
+            <img src="./public/images/winery-estate-house.jpg" alt="Winery estate" />
+          </div>
+          <div class="hero-thumb" tabindex="0">
+            <img src="./public/images/busot-village-hillside.jpg" alt="Busot village" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TOUR PACKAGES ── -->
+    <section class="section section-light" id="tours">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Tour Activity</div>
+          <h2>Our Tour Package <span>Ensures A Seamless</span> And Memorable Adventure.</h2>
+        </div>
+
+        <div class="tour-tabs">
+          <button class="tour-tab">Cave Adventures</button>
+          <button class="tour-tab active">Scenic Exploration</button>
+          <button class="tour-tab">Trail and Insight Tour</button>
+          <button class="tour-tab">Winery Visits</button>
+        </div>
+
+        <div class="tour-carousel-wrap">
+          <div class="tour-carousel" id="tourCarousel">
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/busot-castle-plateau.jpg" alt="Castle plateau above Busot" />
+              <div class="tour-card-overlay">
+                <h3>Castle Plateau</h3>
+                <p>Mountain fortress views</p>
+              </div>
+            </a>
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/canelobre-cave-chamber.jpg" alt="Canelobre Cave" />
+              <div class="tour-card-overlay">
+                <h3>Canelobre Cave</h3>
+                <p>Stunning formations</p>
+              </div>
+            </a>
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/winery-estate-house.jpg" alt="Winery estate" />
+              <div class="tour-card-overlay">
+                <h3>Winery Estate</h3>
+                <p>Historic 1707 bodega</p>
+              </div>
+            </a>
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/busot-castle-village-overlook.jpg" alt="Castle overlook" />
+              <div class="tour-card-overlay">
+                <h3>Castle &amp; Village</h3>
+                <p>Aerial panoramic view</p>
+              </div>
+            </a>
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/busot-church-concert.jpg" alt="Busot church concert" />
+              <div class="tour-card-overlay">
+                <h3>Busot Church</h3>
+                <p>Cultural heritage stop</p>
+              </div>
+            </a>
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/winery-tasting-room.jpg" alt="Winery tasting" />
+              <div class="tour-card-overlay">
+                <h3>Wine Tasting</h3>
+                <p>Guided three-wine experience</p>
+              </div>
+            </a>
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/alicante-old-town-street.jpg" alt="Alicante old town" />
+              <div class="tour-card-overlay">
+                <h3>Alicante Old Town</h3>
+                <p>City starting point</p>
+              </div>
+            </a>
+            <a class="tour-card" href="#packages">
+              <img src="./public/images/busot-rooftops-mountain.jpg" alt="Busot rooftops" />
+              <div class="tour-card-overlay">
+                <h3>Busot Rooftops</h3>
+                <p>Mountain backdrop</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel-nav">
+            <button class="carousel-btn" id="carouselPrev" aria-label="Previous">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="carousel-track">
+              <div class="carousel-thumb" id="carouselThumb"></div>
+            </div>
+            <button class="carousel-btn" id="carouselNext" aria-label="Next">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRICING PACKAGES ── -->
+    <section class="section section-white" id="packages">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Choose Your Package</div>
+          <h2>Choose Your Perfect <span>Package</span> for a Memorable Costa Blanca Adventure</h2>
+        </div>
+
+        <div class="packages">
+          <article class="package">
+            <div class="package-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 L2 12 l10 10 10-10z"/></svg>
+            </div>
+            <h3>Cave Tour</h3>
+            <div class="package-price">€35 <span>/person</span></div>
+            <div class="package-duration">3 hours &middot; Up to 11 guests</div>
+            <ul class="package-features">
+              <li>Canelobre Cave entry &amp; guide</li>
+              <li>Busot village &amp; church visit</li>
+              <li>Castle ruins viewpoint</li>
+              <li>Round-trip transport</li>
+              <li>Bottled water included</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Book Now</a>
+          </article>
+
+          <article class="package">
+            <div class="package-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <h3>Winery Tour</h3>
+            <div class="package-price">€45 <span>/person</span></div>
+            <div class="package-duration">3 hours &middot; English</div>
+            <ul class="package-features">
+              <li>Historic 1707 winery visit</li>
+              <li>3-wine guided tasting</li>
+              <li>Snacks &amp; tapas included</li>
+              <li>Gaudi-style church stop</li>
+              <li>Castle of Mola visit</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Book Now</a>
+          </article>
+
+          <article class="package">
+            <div class="package-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 20 L8 10 l4 5 4-8 5 13"/></svg>
+            </div>
+            <h3>Guadalest Day</h3>
+            <div class="package-price">€55 <span>/person</span></div>
+            <div class="package-duration">7 hours &middot; Small group</div>
+            <ul class="package-features">
+              <li>Guadalest fortress village</li>
+              <li>Reservoir panoramic views</li>
+              <li>Fonts d'Algar waterfalls</li>
+              <li>Full-day mountain route</li>
+              <li>Comfortable transport</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Book Now</a>
+          </article>
+
+          <article class="package">
+            <div class="package-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Private Wine</h3>
+            <div class="package-price">€85 <span>/person</span></div>
+            <div class="package-duration">4.5–5 hours &middot; Private</div>
+            <ul class="package-features">
+              <li>Alicante DOP wine region</li>
+              <li>Monastrell &amp; Fondillon tasting</li>
+              <li>Countryside slow pace</li>
+              <li>Tailored private experience</li>
+              <li>Flexible scheduling</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Book Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section class="section section-light" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Gallery</div>
+          <h2>Capture Your <span>Unforgettable</span> Moments With Us</h2>
+          <p>From dramatic cave formations to sun-drenched village rooftops, every stop tells a story.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item g-wide">
+            <img src="./public/images/busot-castle-plateau.jpg" alt="Castle plateau above Busot" />
+          </div>
+          <div class="gallery-item g-tall">
+            <img src="./public/images/canelobre-cave-chamber.jpg" alt="Inside Canelobre Cave" />
+          </div>
+          <div class="gallery-item g-half">
+            <img src="./public/images/busot-village-hillside.jpg" alt="Busot village hillside" />
+          </div>
+          <div class="gallery-item g-half">
+            <img src="./public/images/winery-tasting-room.jpg" alt="Winery tasting room" />
+          </div>
+          <div class="gallery-item g-two-third">
+            <img src="./public/images/busot-rooftops-mountain.jpg" alt="Busot rooftops with mountains" />
+          </div>
+          <div class="gallery-item g-third">
+            <img src="./public/images/alicante-old-town-street.jpg" alt="Alicante old town street" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REVIEWS ── -->
+    <section class="section section-white" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Testimonials</div>
+          <h2>What People Keep <span>Mentioning</span></h2>
+          <p>The same themes keep returning: small groups, easy transport, clear communication, interesting local context, and a guide who keeps the day relaxed.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-top">
+              <div class="review-name">Eleanor</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="review-date">February 17, 2026</div>
+            <p>From start to finish the experience was seamless. Transport was easy, Busot was lovely, and the whole day felt well looked after.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <div class="review-name">Cath</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="review-date">February 16, 2026</div>
+            <p>Yevgen was very informative with added humour. A lovely guide and a very easy day overall.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <div class="review-name">Susie</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="review-date">February 11, 2026</div>
+            <p>The group was small, we never felt rushed, and there was plenty of time to explore and take photos.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <div class="review-name">Aaron</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="review-date">February 3, 2026</div>
+            <p>It was a last-minute booking and a very good one. Safe driving, comfortable transport, and clear local history throughout.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <div class="review-name">Bianca</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="review-date">February 1, 2026</div>
+            <p>Everything was clear and personal. The guide was sincere, communicative, and gave full attention to the group.</p>
+          </article>
+          <article class="review-card">
+            <div class="review-top">
+              <div class="review-name">Katarzyna</div>
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="review-date">January 19, 2026</div>
+            <p>Stress-free logistics, interesting facts, and a genuinely personal atmosphere. It was easy to recommend after the tour.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW TO BOOK ── -->
+    <section class="section section-white" id="book">
+      <div class="container">
+        <div class="process-icons">
+          <div class="process-icon">
+            <div class="process-icon-circle">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <span>Explore</span>
+          </div>
+          <div class="process-icon">
+            <div class="process-icon-circle">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span>Your Guide</span>
+          </div>
+          <div class="process-icon">
+            <div class="process-icon-circle">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 20 L8 10 l4 5 4-8 5 13"/></svg>
+            </div>
+            <span>Adventure</span>
+          </div>
+          <div class="process-icon">
+            <div class="process-icon-circle">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span>Share &amp; Review</span>
+          </div>
+          <div class="process-icon">
+            <div class="process-icon-circle">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </div>
+            <span>Modify</span>
+          </div>
+        </div>
+
+        <div class="steps-heading">
+          <h2>How to Book Your Tour</h2>
+          <div class="steps-label">4 Easy Steps</div>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">01.</div>
+            <h3>Choose Your Tour</h3>
+            <p>Browse our collection of small-group tours — from caves and villages to wineries and mountain day trips.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">02.</div>
+            <h3>Pick Your Date</h3>
+            <p>Select a date that works for your schedule. Tours run regularly with flexible availability.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">03.</div>
+            <h3>Confirm Details</h3>
+            <p>Share your group size and preferred pickup point from five convenient Alicante locations.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">04.</div>
+            <h3>Enjoy the Tour</h3>
+            <p>Reserve now, pay later. Free cancellation up to 24 hours before — no stress, just adventure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section" id="contact">
+      <div class="cta-layout">
+        <div class="cta-image">
+          <img src="./public/images/busot-castle-plateau.jpg" alt="Busot castle plateau" />
+        </div>
+        <div class="cta-image">
+          <img src="./public/images/winery-exterior.jpg" alt="Winery exterior" />
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <div class="cta-logo">
+          <img src="./public/costa-blanca-logo.svg" alt="" width="48" height="48" />
+        </div>
+        <h2>Book Your Tour Today!</h2>
+        <p>Small groups, clear logistics, and places that still feel local. Reserve now and pay later — free cancellation up to 24 hours before.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#top">Check Availability</a>
+          <a class="btn btn-outline" href="#tours">View All Tours</a>
+        </div>
+        <div class="cta-social">
+          <a href="#" aria-label="Facebook">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" aria-label="TripAdvisor">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="./public/costa-blanca-logo.svg" alt="" width="24" height="24" />
+          <span>Costa Blanca Tour</span>
+        </div>
+        <div class="footer-copy">&copy; 2026 Costa Blanca Tour. Small-group experiences based around Alicante.</div>
+        <nav class="footer-links">
+          <a href="#top">Home</a>
+          <a href="#tours">Tours</a>
+          <a href="#packages">Packages</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // Carousel
+      (function() {
+        const carousel = document.getElementById('tourCarousel');
+        const thumb = document.getElementById('carouselThumb');
+        const prev = document.getElementById('carouselPrev');
+        const next = document.getElementById('carouselNext');
+        if (!carousel) return;
+
+        function updateThumb() {
+          const max = carousel.scrollWidth - carousel.clientWidth;
+          const pct = max > 0 ? carousel.scrollLeft / max : 0;
+          thumb.style.left = (pct * 60) + '%';
+        }
+
+        carousel.addEventListener('scroll', updateThumb, { passive: true });
+        prev.addEventListener('click', () => { carousel.scrollBy({ left: -280, behavior: 'smooth' }); });
+        next.addEventListener('click', () => { carousel.scrollBy({ left: 280, behavior: 'smooth' }); });
+
+        // Drag to scroll
+        let isDown = false, startX, scrollLeft;
+        carousel.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - carousel.offsetLeft; scrollLeft = carousel.scrollLeft; });
+        carousel.addEventListener('mouseleave', () => { isDown = false; });
+        carousel.addEventListener('mouseup', () => { isDown = false; });
+        carousel.addEventListener('mousemove', e => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - carousel.offsetLeft;
+          carousel.scrollLeft = scrollLeft - (x - startX) * 1.5;
+        });
+
+        updateThumb();
+      })();
+
+      // Floating nav: show after scrolling past hero
+      const floatingNav = document.getElementById('floatingNav');
+      const hero = document.querySelector('.hero');
+      const navLinks = floatingNav.querySelectorAll('a:not(.nav-book-btn)');
+      const sections = document.querySelectorAll('section[id]');
+
+      function updateNav() {
+        const scrollY = window.scrollY;
+        const heroBottom = hero.offsetTop + hero.offsetHeight - 100;
+
+        if (scrollY > heroBottom) {
+          floatingNav.classList.add('visible');
+        } else {
+          floatingNav.classList.remove('visible');
+        }
+
+        // Highlight active section
+        let current = '';
+        sections.forEach(s => {
+          if (scrollY >= s.offsetTop - 200) current = s.id;
+        });
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+        });
+      }
+
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+    </script>
+  </body>
+</html>
