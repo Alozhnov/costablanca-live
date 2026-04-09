@@ -1,5 +1,11 @@
 {
   "buildCommand": "",
   "outputDirectory": ".",
-  "framework": null
+  "framework": null,
+  "crons": [
+    {
+      "path": "/api/capture-payments",
+      "schedule": "0 8 * * *"
+    }
+  ]
 }

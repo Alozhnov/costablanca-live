@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed | Costa Blanca Tour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf6f1;
+      color: #2f2117;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: #fff;
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 50px rgba(100,60,20,0.08);
+      text-align: center;
+    }
+    .icon {
+      width: 4rem; height: 4rem;
+      margin: 0 auto 1.5rem;
+      background: rgba(52,211,153,0.12);
+      border: 2px solid rgba(52,211,153,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .subtitle {
+      color: #7a6b5d;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .details {
+      background: #faf6f1;
+      border-radius: 16px;
+      padding: 1.25rem;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    .details p {
+      padding: 0.35rem 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+    }
+    .details p span:first-child { color: #7a6b5d; }
+    .details p span:last-child { font-weight: 600; }
+    .note {
+      background: rgba(212,133,59,0.08);
+      border: 1px solid rgba(212,133,59,0.15);
+      border-radius: 12px;
+      padding: 1rem;
+      font-size: 0.88rem;
+      color: #7a6b5d;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .note strong { color: #d4853b; }
+    .btn {
+      display: inline-flex;
+      padding: 0.75rem 2rem;
+      border-radius: 999px;
+      background: #d4853b;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn:hover { background: #e9a05c; }
+    #loading { color: #7a6b5d; }
+    #content { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div id="loading">Loading your booking details...</div>
+    <div id="content">
+      <div class="icon">&#10003;</div>
+      <h1>Tour Reserved!</h1>
+      <p class="subtitle">Your booking is confirmed. Your card has been authorized but won't be charged until 24 hours before the tour.</p>
+      <div class="details">
+        <p><span>Tour</span><span id="tourName">—</span></p>
+        <p><span>Date</span><span id="tourDate">—</span></p>
+        <p><span>Guests</span><span id="guestCount">—</span></p>
+        <p><span>Total</span><span id="totalPrice">—</span></p>
+      </div>
+      <div class="note">
+        <strong>Free cancellation</strong> up to 24 hours before your tour. Check your email for a confirmation with your cancellation link.
+      </div>
+      <a class="btn" href="/">Back to Homepage</a>
+    </div>
+  </div>
+  <script>
+    (async () => {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id');
+      if (!sessionId) {
+        document.getElementById('loading').textContent = 'No booking session found.';
+        return;
+      }
+      // Show content with metadata from URL or just show generic confirmation
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+      // The details will be populated by the confirmation email
+      // For now show a generic confirmation
+      document.getElementById('tourName').textContent = 'Costa Blanca Tour';
+      document.getElementById('tourDate').textContent = 'Check your email';
+      document.getElementById('guestCount').textContent = '—';
+      document.getElementById('totalPrice').textContent = 'See email';
+    })();
+  </script>
+</body>
+</html>

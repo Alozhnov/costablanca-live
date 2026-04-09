@@ -1064,6 +1064,153 @@
         .footer-links { flex-wrap: wrap; justify-content: center; }
       }
 
+      /* ── BOOKING FORM INPUTS ── */
+      .booking-select {
+        background: transparent;
+        border: none;
+        color: var(--text-light);
+        font-family: var(--font-body);
+        font-size: 0.92rem;
+        font-weight: 500;
+        outline: none;
+        cursor: pointer;
+        width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      .booking-select option { color: var(--text); background: #fff; }
+
+      input[type="date"].booking-select::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      /* ── BOOKING MODAL ── */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: rgba(18,14,10,0.6);
+        backdrop-filter: blur(6px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+
+      .modal-overlay.open { display: flex; }
+
+      .modal {
+        background: #fff;
+        border-radius: var(--radius);
+        max-width: 480px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 1.8rem 0;
+      }
+
+      .modal-header h2 {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .modal-close {
+        width: 2rem; height: 2rem;
+        border: none; background: rgba(87,58,33,0.06);
+        border-radius: 50%;
+        font-size: 1.1rem;
+        cursor: pointer;
+        color: var(--muted);
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s ease;
+      }
+
+      .modal-close:hover { background: rgba(87,58,33,0.12); }
+
+      .modal-body { padding: 1.5rem 1.8rem 1.8rem; }
+
+      .modal-summary {
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .modal-summary p {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.3rem 0;
+        font-size: 0.92rem;
+      }
+
+      .modal-summary p span:first-child { color: var(--muted); }
+      .modal-summary p span:last-child { font-weight: 600; }
+
+      .modal-summary .total {
+        border-top: 1px solid var(--line);
+        margin-top: 0.5rem;
+        padding-top: 0.6rem;
+        font-size: 1.05rem;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.4rem;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--text);
+        background: #fff;
+        transition: border-color 0.2s ease;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      .modal-submit {
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+
+      .modal-error {
+        background: rgba(239,68,68,0.08);
+        border: 1px solid rgba(239,68,68,0.2);
+        color: #dc2626;
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        font-size: 0.88rem;
+        margin-bottom: 1rem;
+        display: none;
+      }
+
       /* ── MENU BUTTON (mobile) ── */
       .menu-btn {
         display: none;
@@ -1127,18 +1274,35 @@
       <div class="container">
         <div class="booking-bar">
           <div class="booking-field">
-            <span class="booking-label">Tour</span>
-            <span class="booking-value">Canelobre &amp; Busot</span>
+            <label class="booking-label" for="bar-tour">Tour</label>
+            <select id="bar-tour" class="booking-select">
+              <option value="cave-tour">Canelobre &amp; Busot</option>
+              <option value="winery-tour">Old Winery &amp; Tastings</option>
+              <option value="guadalest-day">Guadalest &amp; Fonts d'Algar</option>
+              <option value="private-wine">Private Wine Tour</option>
+            </select>
           </div>
           <div class="booking-field">
-            <span class="booking-label">Date</span>
-            <span class="booking-value">Choose a date</span>
+            <label class="booking-label" for="bar-date">Date</label>
+            <input type="date" id="bar-date" class="booking-select" min="" />
           </div>
           <div class="booking-field">
-            <span class="booking-label">Guests</span>
-            <span class="booking-value">2 Guests</span>
+            <label class="booking-label" for="bar-guests">Guests</label>
+            <select id="bar-guests" class="booking-select">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+              <option value="7">7 Guests</option>
+              <option value="8">8 Guests</option>
+              <option value="9">9 Guests</option>
+              <option value="10">10 Guests</option>
+              <option value="11">11 Guests</option>
+            </select>
           </div>
-          <a class="btn btn-primary" href="#contact">Search</a>
+          <button class="btn btn-primary" id="bar-search" onclick="openBookingModal()">Book Now</button>
         </div>
 
         <div class="hero-thumbs">
@@ -1254,7 +1418,7 @@
         </div>
 
         <div class="packages">
-          <article class="package">
+          <article class="package" data-tour="cave-tour">
             <div class="package-icon">
               <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 L2 12 l10 10 10-10z"/></svg>
             </div>
@@ -1268,10 +1432,10 @@
               <li>Round-trip transport</li>
               <li>Bottled water included</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Book Now</a>
+            <button class="btn btn-primary" onclick="openBookingModal(this.closest('.package')?.dataset.tour)">Book Now</button>
           </article>
 
-          <article class="package">
+          <article class="package" data-tour="winery-tour">
             <div class="package-icon">
               <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
             </div>
@@ -1285,10 +1449,10 @@
               <li>Gaudi-style church stop</li>
               <li>Castle of Mola visit</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Book Now</a>
+            <button class="btn btn-primary" onclick="openBookingModal(this.closest('.package')?.dataset.tour)">Book Now</button>
           </article>
 
-          <article class="package">
+          <article class="package" data-tour="guadalest-day">
             <div class="package-icon">
               <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 20 L8 10 l4 5 4-8 5 13"/></svg>
             </div>
@@ -1302,10 +1466,10 @@
               <li>Full-day mountain route</li>
               <li>Comfortable transport</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Book Now</a>
+            <button class="btn btn-primary" onclick="openBookingModal(this.closest('.package')?.dataset.tour)">Book Now</button>
           </article>
 
-          <article class="package">
+          <article class="package" data-tour="private-wine">
             <div class="package-icon">
               <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </div>
@@ -1319,7 +1483,7 @@
               <li>Tailored private experience</li>
               <li>Flexible scheduling</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Book Now</a>
+            <button class="btn btn-primary" onclick="openBookingModal(this.closest('.package')?.dataset.tour)">Book Now</button>
           </article>
         </div>
       </div>
@@ -1544,7 +1708,153 @@
       </div>
     </footer>
 
+    <!-- ── BOOKING MODAL ── -->
+    <div class="modal-overlay" id="bookingModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Reserve Your Tour</h2>
+          <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-error" id="modalError"></div>
+          <div class="modal-summary">
+            <p><span>Tour</span><span id="modalTour">—</span></p>
+            <p><span>Date</span><span id="modalDate">—</span></p>
+            <p><span>Guests</span><span id="modalGuests">—</span></p>
+            <p class="total"><span>Total</span><span id="modalTotal">—</span></p>
+          </div>
+          <div class="form-group">
+            <label for="modalName">Full Name</label>
+            <input type="text" id="modalName" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="modalEmail">Email</label>
+            <input type="email" id="modalEmail" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="modalPhone">Phone (optional)</label>
+            <input type="tel" id="modalPhone" placeholder="+34 ..." />
+          </div>
+          <button class="btn btn-primary modal-submit" id="modalSubmit" onclick="submitBooking()">Reserve Now</button>
+        </div>
+      </div>
+    </div>
+
     <script>
+      // ── BOOKING LOGIC ──
+      const TOUR_DATA = {
+        'cave-tour': { name: 'Canelobre Caves & Busot', price: 35 },
+        'winery-tour': { name: 'Old Winery & Tastings', price: 45 },
+        'guadalest-day': { name: 'Guadalest & Fonts d\'Algar', price: 55 },
+        'private-wine': { name: 'Private Alicante Wine Tour', price: 85 },
+      };
+
+      // Set min date to tomorrow
+      const barDate = document.getElementById('bar-date');
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      barDate.min = tomorrow.toISOString().split('T')[0];
+
+      function openBookingModal(tourSlug) {
+        const slug = tourSlug || document.getElementById('bar-tour').value;
+        const date = document.getElementById('bar-date').value;
+        const guests = parseInt(document.getElementById('bar-guests').value);
+        const tour = TOUR_DATA[slug];
+
+        if (!tour) return;
+
+        if (!date) {
+          // Scroll to booking bar and focus date
+          document.getElementById('bar-date').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => document.getElementById('bar-date').focus(), 400);
+          return;
+        }
+
+        // Pre-select the tour in the bar
+        document.getElementById('bar-tour').value = slug;
+
+        // Fill modal
+        document.getElementById('modalTour').textContent = tour.name;
+        document.getElementById('modalDate').textContent = new Date(date + 'T12:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+        document.getElementById('modalGuests').textContent = guests + (guests === 1 ? ' guest' : ' guests');
+        document.getElementById('modalTotal').textContent = '€' + (tour.price * guests).toFixed(2);
+        document.getElementById('modalError').style.display = 'none';
+        document.getElementById('modalSubmit').disabled = false;
+        document.getElementById('modalSubmit').textContent = 'Reserve Now';
+
+        document.getElementById('bookingModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeBookingModal() {
+        document.getElementById('bookingModal').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      // Close on overlay click
+      document.getElementById('bookingModal').addEventListener('click', function(e) {
+        if (e.target === this) closeBookingModal();
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeBookingModal();
+      });
+
+      async function submitBooking() {
+        const slug = document.getElementById('bar-tour').value;
+        const date = document.getElementById('bar-date').value;
+        const guests = parseInt(document.getElementById('bar-guests').value);
+        const name = document.getElementById('modalName').value.trim();
+        const email = document.getElementById('modalEmail').value.trim();
+        const phone = document.getElementById('modalPhone').value.trim();
+        const errorEl = document.getElementById('modalError');
+        const btn = document.getElementById('modalSubmit');
+
+        if (!name || !email) {
+          errorEl.textContent = 'Please enter your name and email.';
+          errorEl.style.display = 'block';
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Processing...';
+        errorEl.style.display = 'none';
+
+        try {
+          const resp = await fetch('/api/create-checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              tour_slug: slug,
+              date,
+              guest_count: guests,
+              customer_name: name,
+              customer_email: email,
+              customer_phone: phone || undefined,
+            }),
+          });
+
+          const data = await resp.json();
+
+          if (!resp.ok) {
+            errorEl.textContent = data.error || 'Something went wrong. Please try again.';
+            errorEl.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Reserve Now';
+            return;
+          }
+
+          // Redirect to Stripe Checkout
+          window.location.href = data.url;
+        } catch {
+          errorEl.textContent = 'Network error. Please check your connection and try again.';
+          errorEl.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Reserve Now';
+        }
+      }
+
       // Carousel
       (function() {
         const carousel = document.getElementById('tourCarousel');

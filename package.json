@@ -18,6 +18,10 @@
   "homepage": "https://github.com/nniffo/Costablanca#readme",
   "description": "",
   "dependencies": {
-    "puppeteer": "^24.40.0"
+    "@supabase/supabase-js": "^2.102.1",
+    "micro": "^10.0.1",
+    "puppeteer": "^24.40.0",
+    "resend": "^6.10.0",
+    "stripe": "^22.0.1"
   }
 }
